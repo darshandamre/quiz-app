@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { Home, Instructions, Layout, Question } from "./components";
+import { Home, Instructions, Layout, Question, Result } from "./components";
 
 const App = () => {
   return (
@@ -8,6 +8,7 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path="instructions" element={<Instructions />} />
         <Route path="question" element={<Question />} />
+        <Route path="result" element={<Result />} />
       </Route>
     </Routes>
   );
