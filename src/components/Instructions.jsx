@@ -1,4 +1,8 @@
+import { Link, useSearchParams } from "react-router-dom";
+
 const Instructions = () => {
+  const [searchParams] = useSearchParams();
+
   return (
     <div className="ta-center">
       <h2 className="h2 mb-4 mt-2">Instructions</h2>
@@ -11,9 +15,9 @@ const Instructions = () => {
         <li className="mb-3">4. Try to answers these questions yourself.</li>
       </ol>
 
-      {/* <a href="./question.html"> */}
-      <button className="btn">Accept and Continue</button>
-      {/* </a> */}
+      <Link to={`/question?${searchParams.toString()}`}>
+        <button className="btn">Accept and Continue</button>
+      </Link>
     </div>
   );
 };

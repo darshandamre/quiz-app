@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Card = ({ quiz }) => {
   return (
     <div className="card">
-      <Link to="/instructions">
+      <Link to={`/instructions?quiz=${quiz.id}`}>
         <img className="card__image" src={quiz.thumbnail} alt="Tenet" />
         <div className="card__content">
           <h3 className="h3 m-3">{quiz.title}</h3>
