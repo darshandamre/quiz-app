@@ -11,15 +11,15 @@ const Layout = () => {
 
   return (
     <div className="container">
-      <h1 className="h1 ta-center mb-6">
-        <BorderColorIcon fontSize="large" className="mr-3" />
+      <h3 className="h3 mb-6">
+        <BorderColorIcon className="mr-3" />
         amend
         <ThemeIcon
           fontSize="large"
           className="toggle-theme"
           onClick={toggleTheme}
         />
-      </h1>
+      </h3>
       <Outlet />
     </div>
   );

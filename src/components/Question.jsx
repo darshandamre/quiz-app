@@ -29,13 +29,13 @@ const Question = () => {
 
   return (
     <div className="ta-center">
-      <div className="question-data">
+      <h3 className="h3 my-4">{questions?.[currQuestion]?.content}</h3>
+      <div className="question-data my-3">
         <p>
           Question: {currQuestion + 1}/{questions?.length}
         </p>
         <p>Score: {questions?.[currQuestion]?.score}</p>
       </div>
-      <h3 className="h3 mt-4">{questions?.[currQuestion]?.content}</h3>
 
       {questions?.[currQuestion]?.options?.map(({ id, content }) => (
         <button
@@ -53,7 +53,7 @@ const Question = () => {
           onClick={goToNextQuestionOrSubmit}
           disabled={!selectedOption}
           className="btn btn--primary next">
-          {currQuestion === questions?.length - 1 ? "submit" : "next"}
+          {currQuestion === questions?.length - 1 ? "submit" : "next question"}
         </button>
       </div>
     </div>
