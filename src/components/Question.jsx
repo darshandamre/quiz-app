@@ -11,6 +11,22 @@ const Question = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const userAnswers = useRef({});
 
+  const goToNextQuestionOrSubmit = () => {
+    userAnswers.current = {
+      ...userAnswers.current,
+      [questions[currQuestion].id]: selectedOption
+    };
+
+    if (currQuestion === questions.length - 1) {
+      return navigate(`/result?${searchParams.toString()}`, {
+        state: userAnswers.current
+      });
+    }
+
+    setSelectedOption(null);
+    nextQuestion();
+  };
+
   return (
     <div className="ta-center">
       <div className="question-data">
@@ -34,21 +50,7 @@ const Question = () => {
 
       <div className="ta-end mt-4">
         <button
-          href="./result.html"
-          onClick={() => {
-            userAnswers.current = {
-              ...userAnswers.current,
-              [questions[currQuestion].id]: selectedOption
-            };
-
-            if (currQuestion === questions.length - 1) {
-              return navigate(`/result?${searchParams.toString()}`, {
-                state: userAnswers.current
-              });
-            }
-
-            nextQuestion();
-          }}
+          onClick={goToNextQuestionOrSubmit}
           disabled={!selectedOption}
           className="btn btn--primary next">
           {currQuestion === questions?.length - 1 ? "submit" : "next"}
