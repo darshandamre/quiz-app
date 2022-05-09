@@ -1,0 +1,31 @@
+.question-data {
+  display: flex;
+  justify-content: space-between;
+}
+
+.options {
+  margin: 1rem auto;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 31rem;
+}
+
+.options--selected,
+.options--selected:hover {
+  background: var(--primary);
+}
+
+.options--wrong,
+.options--wrong:hover {
+  background: var(--red);
+}
+
+.options--correct,
+.options--correct:hover {
+  background: var(--green);
+}
+
+.next:disabled {
+  cursor: not-allowed;
+}
